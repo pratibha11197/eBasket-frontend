@@ -1,0 +1,23 @@
+<div class="container" style="margin-top: -2rem;">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-6 img-container">
+            <div class="card card-block">
+                <img src="../../assets/images/product-images/{{product.productImage}}" alt="Aalo">
+            </div>
+        </div>
+        <div class="col col-lg-6 details-container">
+            <div class="row">
+            <div class="card card-block">
+                <h3>{{ product.productName }}</h3>
+                <p>{{ product.longDescription }}</p>
+                <p>Price: {{ product.price }}</p>
+                <p>Weight: {{ product.weight }}</p>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-danger btn-lg" style="margin-right: 5%;" (click)="addToCart(product.product_id)">Add to Cart</button>
+                <button type="button" class="btn btn-light btn-lg" style="border: 1px solid gray;">Save for later</button>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.add-to-cart{
+    background: linear-gradient(180deg,rgb(68, 68, 68) 0,rgb(0, 0, 0));
+    color: white; 
+}
+
+.add-to-cart:hover{
+        background: linear-gradient(180deg,rgb(0, 0, 0) 0,rgb(1, 2, 0));
+        color: white; 
+}

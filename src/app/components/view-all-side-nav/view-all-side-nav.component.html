@@ -1,0 +1,10 @@
+<nav class="nav flex-column">
+    <h4>Categories</h4>
+    <hr style=" background-color: #5e9400;">
+    <!-- <ul>
+        <li routerLinkActive="active"><a class="nav-link active" href="#" (click)="getProductByCategory('All')">All</a></li>
+        <li routerLinkActive="active"><a class="nav-link" href="#" *ngFor="let cat of productCategories"  (click)="getProductByCategory(cat.categoryName)">{{ cat.categoryName }}</a></li>
+    </ul> -->
+    <a class="nav-link active" href="#" [ngStyle]="{'color':  getColour('All')}" (click)="getProductByCategory('All')">All</a>
+    <a class="nav-link" href="#" *ngFor="let cat of productCategories" [ngStyle]="{'color':  getColour(cat.categoryName)}"  (click)="getProductByCategory(cat.categoryName)">{{ cat.categoryName }}</a>
+</nav>

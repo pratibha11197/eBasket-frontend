@@ -1,0 +1,27 @@
+<nav class="nav flex-column">
+    <div>
+    <h4>Categories</h4>
+    <hr style=" background-color: #5e9400;">
+    <!-- <ul>
+        <li routerLinkActive="active"><a class="nav-link active" href="#" (click)="getProductByCategory('All')">All</a></li>
+        <li routerLinkActive="active"><a class="nav-link" href="#" *ngFor="let cat of productCategories"  (click)="getProductByCategory(cat.categoryName)">{{ cat.categoryName }}</a></li>
+    </ul> -->
+    <a class="nav-link active" href="#" [ngStyle]="{'color':  getColour('All')}" (click)="getSelectedProductByCategory('All')">All</a>
+    <a class="nav-link" href="#" *ngFor="let cat of productCategories" [ngStyle]="{'color':  getColour(cat.categoryName)}"  (click)="getSelectedProductByCategory(cat.categoryName)">{{ cat.categoryName }}</a>
+</div>
+<hr style=" background-color: #5e9400;">
+   <h4>Refined by</h4>
+   <hr style=" background-color: #5e9400;">
+   <div>
+    <div><h5>Product Rating</h5></div>
+    <div><input type="checkbox" class="form-check-input"><label class="form-check-label" for="flexCheckDefault">4</label></div>
+   </div>
+   <div>
+    <div><h5>Brands</h5></div>
+    <div><input type="checkbox" class="form-check-input"><label class="form-check-label" for="flexCheckDefault">Brand1</label></div>
+   </div>
+   <div>
+    <div><h5>Discount</h5></div>
+    <div><input type="checkbox" class="form-check-input"><label class="form-check-label" for="flexCheckDefault">10%</label></div>
+   </div>
+</nav>

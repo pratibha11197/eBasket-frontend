@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light"
+    style="height:7rem; border-top: 6px solid rgba(94,148,0); box-shadow: 0px .5px .5px 6px #dcdcdc;">
+    <div class="container-fluid" style="width: 75%;">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#" style="text-shadow: 1px 2px 1px rgba(128, 128, 128, 0.502); font-weight: 800; font-size: x-large; color: rgba(94,148,0);">Chota
+            Basket</a>
+        <div style="width: 75%;">
+            <form class="d-flex">
+                <input class="form-control me-2" type="text" aria-label="Search" name="searchKey" placeholder="search" [(ngModel)]="searchKey">
+                <button class="btn btn-outline-success" type="submit" (click)="searchProduct()">Search</button>
+            </form>
+        </div>
+        <div>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item" style="margin-left: 1rem;">
+                        <a class="nav-link" class="btn btn-light btn-md btn-outline-secondary" href="#"
+                            role="button">Login/Register</a>
+                    </li>
+                    <li class="nav-item" style="margin-left: 1rem; background-color: rgba(172, 6, 6, 0.849);"
+                        role="button">
+                        <a class="nav-link" class="btn btn-lg" aria-current="page" routerLink="/cart/{{1}}"
+                            style="font-weight: 500; font-size: large; color: white">Cart</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
