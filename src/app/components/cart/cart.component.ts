@@ -10,7 +10,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  userId: number = 1;
+  userId!: number;
   cartItems: CartItem[] = [];
   cartSubtotal: number = 0;
   cartTotalItems: number = 0;
@@ -20,6 +20,9 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getCartItems();
+  }
+  getCartItems() {
     this.userId = this.route.snapshot.params['userId'];
     this.cartService.getCartItems(this.userId).subscribe((data) => {
       if (data){
@@ -60,6 +63,12 @@ export class CartComponent implements OnInit {
           this.cartTotalSaving += (cartItem.discount * cartItem.quantity);
           this.cartTotalItems += cartItem.quantity;
       }
+  }
+
+   deleteCartItem(cartProductId: number ){
+    this.cartService.deleteCartItem(cartProductId).subscribe((data) => {
+      this.getCartItems();
+    })
   }
 
 }

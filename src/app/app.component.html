@@ -1,3 +1,3 @@
-<app-nevigation-bar *ngIf="router.url !== '/checkout' "></app-nevigation-bar>
+<app-nevigation-bar *ngIf="!router.url.includes('/checkout')"></app-nevigation-bar>
 <router-outlet></router-outlet>
 

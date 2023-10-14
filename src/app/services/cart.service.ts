@@ -16,6 +16,10 @@ export class CartService {
     return this.http.get<CartItem[]>(this.backendUrl + "/cart/" + userId);
   }
 
+  deleteCartItem(cartProductId: number){
+    return this.http.delete(this.backendUrl + "/cart/" + cartProductId);
+  }
+
   decreaseIncreaseItemQty(cartProductId: number, qty: number) {
     return this.http.get<String>(this.backendUrl + "/cart/incDesCartItemQty?cartProductId=" + cartProductId + "&qty=" + qty);
   }
