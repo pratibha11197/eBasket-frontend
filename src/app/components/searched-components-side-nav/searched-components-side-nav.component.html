@@ -6,8 +6,8 @@
         <li routerLinkActive="active"><a class="nav-link active" href="#" (click)="getProductByCategory('All')">All</a></li>
         <li routerLinkActive="active"><a class="nav-link" href="#" *ngFor="let cat of productCategories"  (click)="getProductByCategory(cat.categoryName)">{{ cat.categoryName }}</a></li>
     </ul> -->
-    <a class="nav-link active" href="#" [ngStyle]="{'color':  getColour('All')}" (click)="getSelectedProductByCategory('All')">All</a>
-    <a class="nav-link" href="#" *ngFor="let cat of productCategories" [ngStyle]="{'color':  getColour(cat.categoryName)}"  (click)="getSelectedProductByCategory(cat.categoryName)">{{ cat.categoryName }}</a>
+    <a class="nav-link active" href="#" [ngStyle]="{'color':  getColour('All')}" (click)="getSelectedProductByCategory('All')" [routerLink]="['/search-product']" [queryParams] = "{searchKey: searchKey, category: 'All'}">All</a>
+    <a class="nav-link" href="#" *ngFor="let cat of productCategories" [ngStyle]="{'color':  getColour(cat.categoryName)}"  (click)="getSelectedProductByCategory(cat.categoryName)" [routerLink]="['/search-product']" [queryParams] = "{searchKey: searchKey, category: cat.categoryName}">{{ cat.categoryName }}</a>
 </div>
 <hr style=" background-color: #5e9400;">
    <h4>Refined by</h4>

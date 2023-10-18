@@ -15,53 +15,49 @@ export class SearchedComponentsComponent  implements OnInit{
   itemQty: number[] = [];  
   selectedCategory: string = 'All';
 
-  constructor(private route: ActivatedRoute, private productService: ProductService){
-    route.queryParams.subscribe(p => {console.log(p['searchKey']); 
-    this.searchProducts();
+  constructor(private route: ActivatedRoute, private productService: ProductService, private router: Router ){
+    route.queryParams.subscribe(p => {
+    if(this.searchKey !=  p['searchKey']){
+    this.searchKey =  p['searchKey']; 
+    }
+    if(this.selectedCategory !=  p['category']){
+      this.selectedCategory =  p['category']; 
+      }
+      this.getSelectedProductByCategory(this.selectedCategory);
     });
   }
 
   ngOnInit(): void {
-    this.searchProducts();
+    this.getSelectedProductByCategory(this.selectedCategory);
   }
 
   addToCart(productId: number, i: number){
     const userId = 1;
     this.productService.addProductToCart(productId, userId, this.itemQty[i]).subscribe((data) =>
-    {  if(data){
-       alert("Product added to Cart");
-    }
-    else{
-      alert("Product Not added to Cart");
-    }
+    {
+      alert(data.message);
     }
     )
   }
 
   getSelectedProductByCategory(category: string){
     this.selectedCategory = category;
+    this.searchKey = this.route.snapshot.queryParams['searchKey'];
     if(category != 'All'){
-    this.productService.getProductsByCategory(category, this.searchKey).subscribe(
+    this.productService.getProductsByCategory(this.selectedCategory, this.searchKey).subscribe(
       (data) => {
-        if(data)
-        this.searchedProducts = data;
+        if(data.success)
+        this.searchedProducts = data.result;
       }
     );
     }else{
-      this.productService.getProductsByCategory(category, this.searchKey).subscribe((data) => {
-        if(data){
-        this.searchedProducts = data;
+      this.productService.getAllProducts(this.searchKey).subscribe((data) => {
+        if(data.success){
+        this.searchedProducts = data.result;
         this.itemQty = Array(this.searchedProducts.length).fill(1);
         }
       })
-    }
+    } 
   }
 
-  searchProducts(){
-    this.searchKey = this.route.snapshot.queryParams['searchKey'];
-    this.productService.getAllProducts(this.searchKey).subscribe((data) => {
-      this.searchedProducts = data;
-      this.itemQty = Array(this.searchedProducts.length).fill(1);
-    })
-  }
 }

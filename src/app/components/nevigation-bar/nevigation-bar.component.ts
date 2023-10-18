@@ -13,7 +13,7 @@ export class NevigationBarComponent {
   constructor(private router:Router){}
 
   searchProduct(){
-    this.router.navigate(['/search-product'], { queryParams: {searchKey: this.searchKey}});
+    this.router.navigate(['/search-product'], { queryParams: {searchKey: this.searchKey, category: 'All'}});
   }
 
 }

@@ -6,13 +6,15 @@ import { CartHeaderComponent } from './components/cart-header/cart-header.compon
 import { AllItemsComponent } from './components/all-items/all-items.component';
 import { SearchedComponentsComponent } from './components/searched-components/searched-components.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 const routes: Routes = [
   {path:'product/:id', component: ProductDetailsComponent},
   {path: 'cart/:userId', component: CartComponent},
   {path: 'search-product', component: SearchedComponentsComponent},
   {path: ':userId/checkout', component: CheckoutComponent},
-  {path: '', component: AllItemsComponent},
+  {path: 'view-all', component: AllItemsComponent},
+  {path: '', component: HomePageComponent},
 ];
 
 @NgModule({

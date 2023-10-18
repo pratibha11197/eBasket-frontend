@@ -25,8 +25,8 @@ export class CartComponent implements OnInit {
   getCartItems() {
     this.userId = this.route.snapshot.params['userId'];
     this.cartService.getCartItems(this.userId).subscribe((data) => {
-      if (data){
-        this.cartItems = data;
+      if (data.success){
+        this.cartItems = data.result;
         this.cartNo = this.cartItems.length;
         this.getCartSubTotals(this.cartItems);
       } 
@@ -40,15 +40,17 @@ export class CartComponent implements OnInit {
       qty -= 1
 
     this.cartService.decreaseIncreaseItemQty(cartProductId, qty).subscribe((data) => {
-      // if (data) {
+       if (data.success) {
         this.cartService.getCartItems(this.userId).subscribe((data) => {
-          if (data){
-            this.cartItems = data;
+          if (data.success){
+            this.cartItems = data.result;
             this.cartNo = this.cartItems.length;
             this.getCartSubTotals(this.cartItems);
           } 
         })
-      // }
+       }
+       else
+         alert(data.message);
     });
   }
 
@@ -67,7 +69,10 @@ export class CartComponent implements OnInit {
 
    deleteCartItem(cartProductId: number ){
     this.cartService.deleteCartItem(cartProductId).subscribe((data) => {
-      this.getCartItems();
+      if(data.success)
+        this.getCartItems();
+
+      alert(data.message);
     })
   }
 

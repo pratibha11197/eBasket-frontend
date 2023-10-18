@@ -19,8 +19,8 @@ export class ProductDetailsComponent implements OnInit{
     this.productId = this.route.snapshot.params['id'];
     this.productService.getProductById(this.productId).subscribe((data) =>
     {  
-    if(data)
-       this.product = data;
+    if(data.result)
+       this.product = data.result;
     }
     )
   }
@@ -28,12 +28,8 @@ export class ProductDetailsComponent implements OnInit{
   addToCart(productId: number){
     const userId = 1;
     this.productService.addProductToCart(productId, userId).subscribe((data) =>
-    {  if(data){
-       alert("Product added to Cart");
-    }
-    else{
-      alert("Product Not added to Cart");
-    }
+    {  
+      alert(data.message);
     }
     )
   }

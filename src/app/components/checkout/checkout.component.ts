@@ -27,8 +27,8 @@ export class CheckoutComponent implements OnInit{
   getCartItems(){
     this.userId = this.route.snapshot.params['userId'];
     this.cartService.getCartItems(this.userId).subscribe((data) => {
-      if (data){
-        this.allCartItems = data;
+      if (data.success){
+        this.allCartItems = data.result;
         this.cartNo = this.allCartItems.length;
         this.getCartSubTotals(this.allCartItems);
       } 
@@ -49,7 +49,10 @@ export class CheckoutComponent implements OnInit{
 
   deleteCartItem(cartProductId: number ){
     this.cartService.deleteCartItem(cartProductId).subscribe((data) => {
-      this.getCartItems();
+      if(data.success){
+       this.getCartItems();
+      }
+      alert(data.message);
     })
   }
 

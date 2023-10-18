@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CartItem } from '../models/cartItem.model';
 import { Observable } from 'rxjs';
+import { ResponseHandler } from '../models/response-handler.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,16 +13,16 @@ export class CartService {
 
   constructor(private http: HttpClient) { }
 
-  getCartItems(userId: number): Observable<CartItem[]>{
-    return this.http.get<CartItem[]>(this.backendUrl + "/cart/" + userId);
+  getCartItems(userId: number): Observable<ResponseHandler>{
+    return this.http.get<ResponseHandler>(this.backendUrl + "/cart/" + userId);
   }
 
-  deleteCartItem(cartProductId: number){
-    return this.http.delete(this.backendUrl + "/cart/" + cartProductId);
+  deleteCartItem(cartProductId: number): Observable<ResponseHandler>{
+    return this.http.delete<ResponseHandler>(this.backendUrl + "/cart/" + cartProductId);
   }
 
-  decreaseIncreaseItemQty(cartProductId: number, qty: number) {
-    return this.http.get<String>(this.backendUrl + "/cart/incDesCartItemQty?cartProductId=" + cartProductId + "&qty=" + qty);
+  decreaseIncreaseItemQty(cartProductId: number, qty: number): Observable<ResponseHandler> {
+    return this.http.get<ResponseHandler>(this.backendUrl + "/cart/incDesCartItemQty?cartProductId=" + cartProductId + "&qty=" + qty);
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductCategory } from 'src/app/models/productCategory.model';
 import { ProductCategoryService } from 'src/app/services/product-category.service';
 
@@ -9,19 +10,20 @@ import { ProductCategoryService } from 'src/app/services/product-category.servic
 })
 export class SearchedComponentsSideNavComponent implements OnInit{
 
-  @Input() category: any;
-  @Output() searchnotify: EventEmitter<any> = new EventEmitter<any>();
+  @Input() category!: string;
+  @Input() searchKey!: string;
+  @Output() notifyParent: EventEmitter<any> = new EventEmitter<any>();
 
   productCategories: ProductCategory[] = [];
-  selectedCategory?: string;
-  searchKey?: string;
+  selectedCategory!: string;
 
-  constructor(private productCategoryService: ProductCategoryService){}
+  constructor(private productCategoryService: ProductCategoryService, private route: ActivatedRoute, private router: Router){}
 
   ngOnInit(): void {
     this.productCategoryService.getAllProductCategory().subscribe((data)=>{
-      if(data)
-      this.productCategories = data;
+      if(data.success){
+        this.productCategories = data.result;
+      }
     })
 
     this.selectedCategory = this.category;
@@ -29,7 +31,7 @@ export class SearchedComponentsSideNavComponent implements OnInit{
 
   getSelectedProductByCategory(category: string){
     this.selectedCategory = category;
-    this.searchnotify.emit(category);
+    this.notifyParent.emit(category);
   }
   
   getColour(category: string): any{

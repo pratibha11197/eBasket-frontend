@@ -20,8 +20,8 @@ export class ViewAllSideNavComponent implements OnInit{
 
   ngOnInit(): void {
     this.productCategoryService.getAllProductCategory().subscribe((data)=>{
-      if(data)
-      this.productCategories = data;
+      if(data.success)
+      this.productCategories = data.result;
     })
 
     this.selectedCategory = this.category;

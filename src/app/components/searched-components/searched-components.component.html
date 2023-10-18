@@ -1,7 +1,7 @@
 <div class="container" style="margin-top: 2rem;">
     <div class="row justify-content-md-center">
         <div class="col col-lg-2 cart-details">
-            <app-searched-components-side-nav [category]="selectedCategory" (searchnotify)="getSelectedProductByCategory($event)"></app-searched-components-side-nav>
+            <app-searched-components-side-nav [category]="selectedCategory"  [searchKey]="searchKey" (notifyParent)="getSelectedProductByCategory($event)"></app-searched-components-side-nav>
         </div>
         <div class="col col-lg-10 cart-details">
             <div class="card-group row">

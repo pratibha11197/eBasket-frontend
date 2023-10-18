@@ -15,6 +15,7 @@ import { SearchedComponentsComponent } from './components/searched-components/se
 import { SearchedComponentsSideNavComponent } from './components/searched-components-side-nav/searched-components-side-nav.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { CheckoutHeaderComponent } from './components/checkout-header/checkout-header.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CheckoutHeaderComponent } from './components/checkout-header/checkout-h
     SearchedComponentsComponent,
     SearchedComponentsSideNavComponent,
     CheckoutComponent,
-    CheckoutHeaderComponent
+    CheckoutHeaderComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
