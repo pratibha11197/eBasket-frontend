@@ -2,10 +2,10 @@ import { Cart } from "./cart.model";
 
 export class Customer{
     customer_id!: number;
-    customerName!: string;
+    customer_name!: string;
     email!: string;
     password!: string;
 	address!: string;
-    phoneNo!: number;
+    phone_no!: number;
 	cart!: Cart;
 }

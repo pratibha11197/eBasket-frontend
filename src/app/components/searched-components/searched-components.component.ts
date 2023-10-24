@@ -48,6 +48,7 @@ export class SearchedComponentsComponent  implements OnInit{
       (data) => {
         if(data.success)
         this.searchedProducts = data.result;
+        this.itemQty = Array(this.searchedProducts.length).fill(1);
       }
     );
     }else{

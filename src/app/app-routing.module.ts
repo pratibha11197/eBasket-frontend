@@ -7,13 +7,17 @@ import { AllItemsComponent } from './components/all-items/all-items.component';
 import { SearchedComponentsComponent } from './components/searched-components/searched-components.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {path:'product/:id', component: ProductDetailsComponent},
-  {path: 'cart/:userId', component: CartComponent},
+  {path: 'cart', component: CartComponent},
   {path: 'search-product', component: SearchedComponentsComponent},
   {path: ':userId/checkout', component: CheckoutComponent},
   {path: 'view-all', component: AllItemsComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
   {path: '', component: HomePageComponent},
 ];
 

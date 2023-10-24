@@ -1,0 +1,49 @@
+<div style="text-align: center; margin-top: 2rem;"  class="container">
+  <div class="row justify-content-md-center">
+  <div style="width: 67%;">
+  <button type="button btn-primary" style="width: 50%; height: 5rem; border: none; background-color:#000000e6; color: white; border-left: .25px solid #5e94006c; border-top: .25px solid #5e94006c; border-top-left-radius: .5rem ; border-bottom: .5px solid white; border-right: 1px solid rgba(216, 216, 216, 0.799); font-size: 1.5rem; font-weight: 400;" routerLink="/login">Login</button>
+  <button type="button btn-primary" style="width: 50%; height: 5rem; border: none;  background-color:#000000e6; color: white; border-right: .25px solid #5e94006c; border-top: .25px solid #5e94006c; border-top-right-radius: .5rem; font-size: 1.5rem; font-weight: 400;" routerLink="/register">Register</button>
+  </div>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <form style="width: 65%; border: .25px solid #5e94006c; padding: 5rem; padding-bottom: 2rem; box-shadow: 0px .2px .2px 2px #dcdcdc; background-color:#000000e6; color: white; border-radius: .5rem;" [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)" >
+            <div class="form-group row">
+              <label for="inputName3" class="col-sm-2 col-form-label">Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputName3" placeholder="Name" name="customer_name" formControlName="customer_name">
+              </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputemail3" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email" formControlName="email">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPhoneNo3" class="col-sm-2 col-form-label">Phone No.</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPhoneNo3" placeholder="PhoneNo" name="phone_no" formControlName="phone_no">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputAddress3" class="col-sm-2 col-form-label">Address</label>
+                <div class="col-sm-10">
+                  <textarea col="2" rows="2" class="form-control" id="inputAddress3" placeholder="Address" name="addresss" formControlName="address"></textarea>
+                </div>
+              </div>
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="password" formControlName="password">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div style="text-align: center; padding-top: 1rem;">
+                <button type="submit" class="btn btn-primary" style="width: 18rem; height: 3.2rem; color: rgb(218, 213, 213); background-color:  #af0303; font-size: 1.35rem; font-weight: 600; border: 0px;" [disabled]="registerForm.untouched || registerForm.invalid">Register</button>
+              </div>
+            </div>
+          </form>
+    </div>
+</div>
+</div>
+</div>

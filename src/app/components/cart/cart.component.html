@@ -4,7 +4,7 @@
             style="font-size: 1.8rem; font-weight: 700; height: 4rem; font-family: ProximaNova,Helvetica,Arial,sans-serif;">
             Your Cart</div>
         <app-cart-header [cartSubtotal]="cartSubtotal" [cartTotalItems]="cartTotalItems"
-            [cartTotalSaving]="cartTotalSaving" [userId]="userId"></app-cart-header>
+            [cartTotalSaving]="cartTotalSaving" [userId]="user.customer_id"></app-cart-header>
         <div class="col col-lg-12 cart-details">
             <div class="row cart-items-header"
                 style="font-size: 1.5rem; font-weight: 600; color: rgb(114, 114, 114); padding-top: 1rem;">
@@ -72,6 +72,6 @@
             </ul>
         </div>
         <app-cart-header *ngIf="cartNo > 1" [cartSubtotal]="cartSubtotal" [cartTotalItems]="cartTotalItems"
-            [cartTotalSaving]="cartTotalSaving" [userId]="userId"></app-cart-header>
+            [cartTotalSaving]="cartTotalSaving" [userId]="user.customer_id"></app-cart-header>
     </div>
 </div>

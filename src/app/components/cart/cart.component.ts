@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CartItem } from 'src/app/models/cartItem.model';
+import { Customer } from 'src/app/models/customer.model';
+import { ResponseHandler } from 'src/app/models/response-handler.model';
 import { CartService } from 'src/app/services/cart.service';
+import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,21 +13,36 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  userId!: number;
+  user!: Customer;
   cartItems: CartItem[] = [];
   cartSubtotal: number = 0;
   cartTotalItems: number = 0;
   cartTotalSaving: number = 0;
   cartNo: number = 0;
 
-  constructor(private cartService: CartService, private route: ActivatedRoute) { }
+  constructor(private cartService: CartService, private route: ActivatedRoute, private customerService: CustomerService, private router: Router) { }
 
   ngOnInit(): void {
-    this.getCartItems();
+
+    if (!localStorage.getItem('token')) {
+      this.router.navigateByUrl('/login')
+      return
+    }
+
+    let  token = localStorage.getItem('token');
+
+
+  this.customerService.getUserByToken(token).subscribe((data : ResponseHandler) => {
+    if(data.success){
+      this.user = data.result;
+      this.getCartItems();
+    }
+  }, (error : ErrorEvent) => {
+      console.log(error);
+  })
   }
   getCartItems() {
-    this.userId = this.route.snapshot.params['userId'];
-    this.cartService.getCartItems(this.userId).subscribe((data) => {
+    this.cartService.getCartItems( this.user.customer_id).subscribe((data) => {
       if (data.success){
         this.cartItems = data.result;
         this.cartNo = this.cartItems.length;
@@ -41,7 +59,7 @@ export class CartComponent implements OnInit {
 
     this.cartService.decreaseIncreaseItemQty(cartProductId, qty).subscribe((data) => {
        if (data.success) {
-        this.cartService.getCartItems(this.userId).subscribe((data) => {
+        this.cartService.getCartItems(this.user.customer_id).subscribe((data) => {
           if (data.success){
             this.cartItems = data.result;
             this.cartNo = this.cartItems.length;

@@ -1,0 +1,31 @@
+<div style="text-align: center; margin-top: 8rem;"  class="container">
+  <div class="row justify-content-md-center">
+  <div style="width: 67%;">
+  <button type="button btn-primary" style="width: 50%; height: 5rem; border: none; background-color:#000000e6; color: white; border-left: .25px solid #5e94006c; border-top: .25px solid #5e94006c; border-top-left-radius: .5rem ; border-bottom: .5px solid white; border-right: 1px solid rgba(216, 216, 216, 0.799); font-size: 1.5rem; font-weight: 400;" routerLink="/login">Login</button>
+  <button type="button btn-primary" style="width: 50%; height: 5rem; border: none;  background-color:#000000e6; color: white; border-right: .25px solid #5e94006c; border-top: .25px solid #5e94006c; border-top-right-radius: .5rem; font-size: 1.5rem; font-weight: 400;" routerLink="/register">Register</button>
+  </div>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <form style="width: 65%; border: .25px solid #5e94006c; border-top: 0px; padding: 5rem; padding-bottom: 2rem; box-shadow: 0px .2px .2px 2px #dcdcdc; background-color:#000000e6; color: white; border-radius : .5rem; border-top-right-radius: 0px; border-top-left-radius: 0px ;" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+            <div class="form-group row">
+                <label for="inputemail3" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email" formControlName="email">
+                </div>
+              </div>
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="password" formControlName="password">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div style="text-align: center; padding-top: 1rem;">
+                <button type="submit" class="btn btn-primary" style="width: 18rem; height: 3.2rem; color: rgb(218, 213, 213); background-color:  #af0303; font-size: 1.35rem; font-weight: 600; border: 0px;" [disabled]="loginForm.untouched || loginForm.invalid">Login</button>
+              </div>
+            </div>
+          </form>
+    </div>
+</div>
+</div>
+</div>

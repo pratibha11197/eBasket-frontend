@@ -16,6 +16,8 @@ import { SearchedComponentsSideNavComponent } from './components/searched-compon
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { CheckoutHeaderComponent } from './components/checkout-header/checkout-header.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     SearchedComponentsSideNavComponent,
     CheckoutComponent,
     CheckoutHeaderComponent,
-    HomePageComponent
+    HomePageComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
