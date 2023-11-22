@@ -35,10 +35,7 @@ export class CustomerService {
   }
 
   getUserByToken(token: any): Observable<ResponseHandler> {
-    return this.http.get<ResponseHandler>(this.backendUrl + "/customer/byToken", { headers: new HttpHeaders({
-      'Authorization': 'Bearer ' + localStorage.getItem('token'),
-      'Content-Type': 'application/json'
-    })});
+    return this.http.get<ResponseHandler>(this.backendUrl + "/customer/byToken");
   }
 }
- 
+  

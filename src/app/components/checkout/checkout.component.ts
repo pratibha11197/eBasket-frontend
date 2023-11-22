@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CartItem } from 'src/app/models/cartItem.model';
 import { Product } from 'src/app/models/product.model';
 import { CartService } from 'src/app/services/cart.service';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'app-checkout',
@@ -18,7 +19,7 @@ export class CheckoutComponent implements OnInit{
   cartTotalItems!: number;
   cartNo!: number;
 
-  constructor(private cartService: CartService, private route: ActivatedRoute){}
+  constructor(private cartService: CartService, private route: ActivatedRoute, private orderService: OrderService, private router: Router){}
 
   ngOnInit(): void {
     this.getCartItems();
@@ -54,6 +55,18 @@ export class CheckoutComponent implements OnInit{
       }
       alert(data.message);
     })
+  }
+
+  order(){
+     this.orderService.order(this.userId, this.allCartItems[0].cart.cart_id).subscribe((data) => {
+      if(data.success){
+        this.getCartItems();
+        this.router.navigateByUrl('/order-success');
+       }
+       else{
+         alert(data.message);
+       }
+     })
   }
 
 }

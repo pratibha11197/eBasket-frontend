@@ -1,0 +1,85 @@
+<div class="container" style="margin-top: 2rem;">
+    <div class="row justify-content-md-center" style="width: 100%;">
+        <div class="col col-lg-12"
+            style="font-size: 1.8rem; font-weight: 700; height: 4rem; font-family: ProximaNova,Helvetica,Arial,sans-serif;">
+            My Orders</div>
+        <div class="col col-lg-12 orders">
+            <div class="row orders-header"
+                style="font-size: 1.25rem; font-weight: 600; color: rgb(211, 210, 210); background-color:  rgb(18, 17, 17); border-radius: .5rem; height: 4rem; align-items: center;">
+                <div class="col-lg-1"
+                style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                <span style="text-align: center;"></span>
+            </div>
+                <div class="col-lg-2"
+                    style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                    <span style="text-align: center;">Order Status</span>
+                </div>
+                <div class="col-lg-3"
+                    style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                    <span>Delivery Date</span></div>
+                <div class="col-lg-2"
+                    style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                    <span>Amount</span></div>
+                <div class="col-lg-2"
+                    style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                    <span>Items</span>
+                </div>
+                <div class="col-lg-2"
+                    style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="order-container">
+            <ul>
+                <li *ngFor="let order of allOrders; let i=index;" style="padding: 0%; margin-left: -1.75rem; color: gray;">
+                    <div class="row"
+                        style="border-color: rgba(238, 238, 238, 0.379); border: .1rem solid rgba(165, 165, 165, 0.489); height: 5rem; margin-top: 2rem; box-shadow: rgba(48, 48, 48, 0.04) 0px 0px 1px, rgba(96, 96, 96, 0.16) 0px 1px 2px; ">
+                        <div class="col-lg-1" style="background-color: rgb(148, 148, 148); display: flex; flex-direction: row; justify-content: center; align-items: center; width: 100%; height: 100%;">
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg"
+                            style="background-color: rgb(148, 148, 148); display: flex; flex-direction: row; justify-content: center; align-items: center; width: 50%; height: 50%;" >
+                                <mask id="express-bike_svg__a" mask-type="alpha" maskUnits="userSpaceOnUse">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.565 12.26h2.74l-.159.95a2.744 2.744 0 0 0-1.798 2.573c0 1.51 1.229 2.739 2.739 2.739 1.09 0 2.034-.64 2.475-1.566h5.224a2.743 2.743 0 0 0 2.475 1.566c1.51 0 2.739-1.229 2.739-2.74 0-1.16-.725-2.153-1.745-2.552l-.416-1.51.596.15V9.522l-1.125.28-.185-.672V7.565h-2.603V9.13h1.036c0 .142.02.284.06.423l.252.915-2.392 1.793h-1.304c0-.863-.702-1.565-1.565-1.565h-.587L11.609 6H3l1.957 1.174-.05.636H3.784l1.051.954-.024.318-.05.635-.195 2.544Zm12.752-.171.285 1.035a2.747 2.747 0 0 0-2.052 2.267h-4.752a2.746 2.746 0 0 0-2.071-2.272l.143-.858H11.609c0 .863.702 1.565 1.565 1.565H15l2.317-1.737ZM6.913 15.783c0-.648.527-1.174 1.174-1.174.647 0 1.174.526 1.174 1.174 0 .647-.527 1.173-1.174 1.173a1.175 1.175 0 0 1-1.174-1.173Zm2.348-5.087H6.13l.39-3.13h3.131l-.391 3.13Zm7.826 5.087c0-.648.527-1.174 1.174-1.174.647 0 1.174.526 1.174 1.174 0 .647-.527 1.173-1.174 1.173a1.175 1.175 0 0 1-1.174-1.173Z">
+                                    </path>
+                                </mask>
+                                <g mask="url(#express-bike_svg__a)">
+                                    <path d="M0 0h24v24H0z"></path>
+                                </g>
+                            </svg></div>
+                        <div class="order_status-container col-lg-2"
+                            style="display: flex; flex-direction: row; justify-content: center; align-items: center; font-weight: 500;">
+                            <div>
+                                {{ order.order_status }}
+                            </div>
+                        </div>
+                        <div class="delivery_date-container col-lg-3"
+                            style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                            <div>
+                                <span>{{ order.delivery_date }}</span>
+                            </div>
+                        </div>
+                        <div class="total_price-container col-lg-2"
+                            style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                            <div>
+                                <span>{{ order.total_price }}</span>
+                            </div>
+                        </div>
+                        <div class="total_item_qty-container col-lg-2"
+                            style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                            <div>
+                                <span>{{ order.total_item_qty }}</span>
+                            </div>
+                        </div>
+                        <div class="total_item_qty-container col-lg-2"
+                        style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                        <div>
+                            <a role="button" routerLink="/order-details/{{order.order_id}}" style="font-size: 1.5; font-weight: 500; color: rgb(8, 164, 8);">View Details <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="false" class="cursor-pointer"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.3 3.582 3.22 4c.199.247.196.6-.008.845l-3.333 4a.666.666 0 1 1-1.024-.854l2.984-3.58-2.877-3.575A.666.666 0 1 1 9.3 3.582ZM3.698 3.48a.667.667 0 0 1 .937.101l3.219 4c.198.247.196.6-.008.845l-3.333 4a.666.666 0 1 1-1.024-.854l2.983-3.58-2.876-3.575a.667.667 0 0 1 .102-.937Z"></path></svg></a>
+                        </div>
+                    </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

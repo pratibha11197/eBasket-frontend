@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NevigationBarComponent } from './components/nevigation-bar/nevigation-bar.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CartHeaderComponent } from './components/cart-header/cart-header.component';
@@ -18,6 +18,10 @@ import { CheckoutHeaderComponent } from './components/checkout-header/checkout-h
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { OrderSuccessComponent } from './components/order-success/order-success.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,10 @@ import { LoginComponent } from './components/login/login.component';
     CheckoutHeaderComponent,
     HomePageComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    OrderSuccessComponent,
+    OrdersComponent,
+    OrderDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,11 @@ import { LoginComponent } from './components/login/login.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
