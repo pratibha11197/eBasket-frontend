@@ -1,1 +1,117 @@
-<p>order-details works!</p>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-12"
+            style="font-size: 1.8rem; font-weight: 700; height: 4rem; font-family: ProximaNova,Helvetica,Arial,sans-serif; margin-top: 2.5rem;">
+            Order Details
+        </div>
+        <div class="col col-lg-4"
+            style="font-size: 1.2rem; font-weight: 500; height: 4rem; font-family: ProximaNova,Helvetica,Arial,sans-serif; margin-top: 2.5rem;">
+            <span>Order No: </span>
+            <span style="font-weight: 600;">{{ orderDetails.order_no }}</span>
+        </div>
+        <div class="col col-lg-4"
+            style="font-size: 1.2rem; font-weight: 500; height: 4rem; font-family: ProximaNova,Helvetica,Arial,sans-serif; margin-top: 2.5rem;">
+            <span>Status: </span>
+            <span
+                style=" font-size: 1rem; border: 1px dotted green; border-radius: 6.25rem; padding: 6px; padding-left: 15px; padding-right: 15px;  color: rgb(43, 128, 0); background-color: rgba(103, 247, 55, 0.119);">{{ orderDetails.order_status}}</span>
+        </div>
+        <div class="col col-lg-4" style="margin-top: 2rem;">
+            <button class="btn btn-light"
+                style="border: 1px solid rgb(166, 166, 166); font-size: 1.2rem; font-weight: 550; height: 3rem; font-family: ProximaNova,Helvetica,Arial,sans-serif; color: rgb(67, 67, 67); border-radius: .5rem; padding-left: 1.2rem; padding-right: 1.2rem;">Download
+                Inovice
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 22 22">
+                    <path fill="#202020" fill-rule="evenodd"
+                        d="M10.086 11.07a.892.892 0 01-.003-.07V3.667a.916.916 0 111.833 0V11l2.2-1.65a.916.916 0 111.1 1.467l-3.666 2.75a.916.916 0 01-1.077.016l-3.667-2.58A.916.916 0 117.86 9.505l2.226 1.566zM5.5 15.583v.917h11v-.917a.92.92 0 01.916-.916.92.92 0 01.917.916v1.834a.92.92 0 01-.916.916H4.582a.92.92 0 01-.917-.916v-1.834a.92.92 0 01.917-.916.92.92 0 01.917.916z"
+                        clip-rule="evenodd"></path>
+                    <mask id="mask0_3766_15151" width="16" height="17" x="3" y="2" maskUnits="userSpaceOnUse"
+                        style="mask-type: alpha;">
+                        <path fill="#202020" fill-rule="evenodd"
+                            d="M10.086 11.07a.892.892 0 01-.003-.07V3.667a.916.916 0 111.833 0V11l2.2-1.65a.916.916 0 111.1 1.467l-3.666 2.75a.916.916 0 01-1.077.016l-3.667-2.58A.916.916 0 117.86 9.505l2.226 1.566zM5.5 15.583v.917h11v-.917a.92.92 0 01.916-.916.92.92 0 01.917.916v1.834a.92.92 0 01-.916.916H4.582a.92.92 0 01-.917-.916v-1.834a.92.92 0 01.917-.916.92.92 0 01.917.916z"
+                            clip-rule="evenodd"></path>
+                    </mask>
+                    <g mask="url(#mask0_3766_15151)">
+                        <path fill="#202020" d="M0 0H22V22H0z"></path>
+                    </g>
+                </svg>
+            </button>
+        </div>
+
+        <div class="track" style="margin-bottom: 5rem; margin-top: 5rem;">
+            <div class="step active"> <span class="icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="#231F20" fill-rule="evenodd" d="M6.575 12a.667.667 0 01-.486-.21L2.847 8.337a.666.666 0 11.972-.912l2.75 2.927 5.605-6.135a.667.667 0 01.985.899l-6.092 6.667A.665.665 0 016.58 12h-.005z" clip-rule="evenodd"></path><mask id="mask0_3184_26703" width="12" height="8" x="2" y="4" maskUnits="userSpaceOnUse" style="mask-type: alpha;"><path fill="#fff" fill-rule="evenodd" d="M6.575 12a.667.667 0 01-.486-.21L2.847 8.337a.666.666 0 11.972-.912l2.75 2.927 5.605-6.135a.667.667 0 01.985.899l-6.092 6.667A.665.665 0 016.58 12h-.005z" clip-rule="evenodd"></path></mask><g mask="url(#mask0_3184_26703)"><path fill="#ffffff" d="M0 0H16V16H0z"></path></g></svg> </span> <span class="text"> Placed </span> </div>
+            <div class="step active"> <span class="icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="#231F20" fill-rule="evenodd" d="M6.575 12a.667.667 0 01-.486-.21L2.847 8.337a.666.666 0 11.972-.912l2.75 2.927 5.605-6.135a.667.667 0 01.985.899l-6.092 6.667A.665.665 0 016.58 12h-.005z" clip-rule="evenodd"></path><mask id="mask0_3184_26703" width="12" height="8" x="2" y="4" maskUnits="userSpaceOnUse" style="mask-type: alpha;"><path fill="#fff" fill-rule="evenodd" d="M6.575 12a.667.667 0 01-.486-.21L2.847 8.337a.666.666 0 11.972-.912l2.75 2.927 5.605-6.135a.667.667 0 01.985.899l-6.092 6.667A.665.665 0 016.58 12h-.005z" clip-rule="evenodd"></path></mask><g mask="url(#mask0_3184_26703)"><path fill="#ffffff" d="M0 0H16V16H0z"></path></g></svg> </span> <span class="text"> In progress </span> </div>
+            <div class="step"> <span class="icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="#231F20" fill-rule="evenodd" d="M6.575 12a.667.667 0 01-.486-.21L2.847 8.337a.666.666 0 11.972-.912l2.75 2.927 5.605-6.135a.667.667 0 01.985.899l-6.092 6.667A.665.665 0 016.58 12h-.005z" clip-rule="evenodd"></path><mask id="mask0_3184_26703" width="12" height="8" x="2" y="4" maskUnits="userSpaceOnUse" style="mask-type: alpha;"><path fill="#fff" fill-rule="evenodd" d="M6.575 12a.667.667 0 01-.486-.21L2.847 8.337a.666.666 0 11.972-.912l2.75 2.927 5.605-6.135a.667.667 0 01.985.899l-6.092 6.667A.665.665 0 016.58 12h-.005z" clip-rule="evenodd"></path></mask><g mask="url(#mask0_3184_26703)"><path fill="#ffffff" d="M0 0H16V16H0z"></path></g></svg> </span> <span class="text"> Packed </span> </div>
+            <div class="step"> <span class="icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="#231F20" fill-rule="evenodd" d="M6.575 12a.667.667 0 01-.486-.21L2.847 8.337a.666.666 0 11.972-.912l2.75 2.927 5.605-6.135a.667.667 0 01.985.899l-6.092 6.667A.665.665 0 016.58 12h-.005z" clip-rule="evenodd"></path><mask id="mask0_3184_26703" width="12" height="8" x="2" y="4" maskUnits="userSpaceOnUse" style="mask-type: alpha;"><path fill="#fff" fill-rule="evenodd" d="M6.575 12a.667.667 0 01-.486-.21L2.847 8.337a.666.666 0 11.972-.912l2.75 2.927 5.605-6.135a.667.667 0 01.985.899l-6.092 6.667A.665.665 0 016.58 12h-.005z" clip-rule="evenodd"></path></mask><g mask="url(#mask0_3184_26703)"><path fill="#ffffff" d="M0 0H16V16H0z"></path></g></svg> </span> <span class="text">On the way</span> </div>
+            <div class="step"> <span class="icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="#231F20" fill-rule="evenodd" d="M6.575 12a.667.667 0 01-.486-.21L2.847 8.337a.666.666 0 11.972-.912l2.75 2.927 5.605-6.135a.667.667 0 01.985.899l-6.092 6.667A.665.665 0 016.58 12h-.005z" clip-rule="evenodd"></path><mask id="mask0_3184_26703" width="12" height="8" x="2" y="4" maskUnits="userSpaceOnUse" style="mask-type: alpha;"><path fill="#fff" fill-rule="evenodd" d="M6.575 12a.667.667 0 01-.486-.21L2.847 8.337a.666.666 0 11.972-.912l2.75 2.927 5.605-6.135a.667.667 0 01.985.899l-6.092 6.667A.665.665 0 016.58 12h-.005z" clip-rule="evenodd"></path></mask><g mask="url(#mask0_3184_26703)"><path fill="#ffffff" d="M0 0H16V16H0z"></path></g></svg> </span> <span class="text">Delivered</span> </div>
+        </div>
+
+        <div class="row justify-content-md-center" style="padding-top: 5rem;">
+            <div class="col col-lg-4 img-container">
+                <div class="card card-block" style="border: none;">
+                    <span style="font-size: 1.2rem; font-weight: 550; margin-bottom: 1.2rem;">Your Delivery address</span>
+                    <div class="card card-block">
+                        <h6> {{ user.customer_name }}</h6>
+                        <p>{{ orderDetails.order_address }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-4 img-container">
+                <div class="card card-block" style="border: none;">
+                    <span style="font-size: 1.2rem; font-weight: 550; margin-bottom: 1.2rem;">Your Delivery Slot</span>
+                    <div class="card card-block">
+                        <p>{{ orderDetails.delivery_date }}</p>
+                        <p>{{ orderDetails.delivery_slot }}</p>
+                    </div>
+                </div>
+                <div class="card card-block" style="border: none;">
+                    <span style="font-size: 1.2rem; font-weight: 550; margin-bottom: 1.2rem;">Payment status</span>
+                    <div class="card card-block">
+                        <p>{{ orderDetails.payment_status == true ? "Paid" : "Pending"}}</p>
+                    </div>
+                </div>
+                <div class="card card-block" style="border: none;">
+                    <span style="font-size: 1.2rem; font-weight: 550; margin-bottom: 1.2rem;">Mode of payment</span>
+                    <div class="card card-block">
+                        <p>Cash On Delivery</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-4 img-container">
+                <div class="card card-block" style="border: none;">
+                    <span style="font-size: 1.2rem; font-weight: 550; margin-bottom: 1.2rem;">Order summary</span>
+                    <div class="card card-block">
+                        <h6> SubTotal : </h6>
+                        <p>Total Amount : ₹{{ orderDetails.total_price }}</p>
+                        <p>Total Quanity : {{ orderDetails.total_item_qty }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center" style="padding-top: 1.5rem;">
+            <div class="col col-lg-12"
+                style="font-size: 1.2rem; font-weight: 600; height: 4rem; font-family: ProximaNova,Helvetica,Arial,sans-serif; margin-top: 2.5rem; padding-left: 0%;">
+                Items purchased ({{ orderDetails.total_item_qty }})
+            </div>
+            <div class="row justify-content-md-center" *ngFor="let item of items">
+            <div class="col col-lg-4 img-container">
+                <div class="card card-block">
+                    <img src="../../assets/images/product-images/{{item.product.productImage}}" alt="Aalo" style="width: 120px; height: 120px; margin-top: 0%;">
+                </div>
+            </div>
+            <div class="col col-lg-6 details-container">
+                <div class="row">
+                    <div class="card card-block">
+                        <h5>{{ item.product.productName }}</h5>
+                        <p>{{ item.product.longDescription }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-2 img-container">
+                <div class="card card-block">
+                    <p>Price: ₹{{ item.product.price }} | Qty: {{item.quantity}}</p>
+                    <p>Weight: {{ item.product.weight }}g</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>

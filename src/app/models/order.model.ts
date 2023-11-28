@@ -1,12 +1,12 @@
 import { Customer } from "./customer.model";
-import { orderItem } from "./orderItem.model";
+import { OrderItem } from "./orderItem.model";
 
 export class Order{
     order_id!: number;
     order_no!: number;
     order_status!: string;
     customer!: Customer;
-    orderItem!: orderItem[];
+    orderItem!: OrderItem[];
     order_date!: Date;
     ship_date!: Date;
     delivery_slot!: String;

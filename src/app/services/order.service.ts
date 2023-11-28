@@ -22,4 +22,12 @@ export class OrderService {
     getAllOrders(userId: number): Observable<ResponseHandler> {
         return this.http.get<ResponseHandler>(this.backendUrl + "/orders/" + userId);
     }
+
+    getOrderById(orderId: number): Observable<ResponseHandler> {
+        return this.http.get<ResponseHandler>(this.backendUrl + "/orders/id/" + orderId);
+    }
+
+    getOrderedItemsById(orderId: number): Observable<ResponseHandler> {
+        return this.http.get<ResponseHandler>(this.backendUrl + "/orders/items/" + orderId);
+    }
 }
