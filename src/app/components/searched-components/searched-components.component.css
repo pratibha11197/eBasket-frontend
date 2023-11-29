@@ -9,6 +9,6 @@
 }
 
 .dropdown-item:hover{
-    background: linear-gradient(180deg,rgb(0, 0, 0) 0,rgb(1, 2, 0));
-    color: white; 
+    color: white;
+    background: linear-gradient(180deg,rgb(0, 0, 0) 0,rgb(1, 2, 0)); 
 }

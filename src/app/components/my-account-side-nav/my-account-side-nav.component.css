@@ -1,0 +1,14 @@
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+a:hover {
+    color: rgb(34, 74, 3);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }

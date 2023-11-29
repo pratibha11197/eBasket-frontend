@@ -29,7 +29,7 @@ export class SearchedComponentsSideNavComponent implements OnInit{
     this.selectedCategory = this.category;
   }
 
-  getSelectedProductByCategory(category: string){
+  getSelectedProductByCategoryAndCriteria(category: string, criteria: string){
     this.selectedCategory = category;
     this.notifyParent.emit(category);
   }

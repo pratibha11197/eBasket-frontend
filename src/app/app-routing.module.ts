@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { OrderSuccessComponent } from './components/order-success/order-success.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { MyAccountComponent } from './components/my-account/my-account.component';
 
 const routes: Routes = [
   {path:'product/:id', component: ProductDetailsComponent},
@@ -22,6 +23,8 @@ const routes: Routes = [
   {path: 'order-details/:id', component: OrderDetailsComponent},
   {path: 'orders', component: OrdersComponent},
   {path: 'view-all', component: AllItemsComponent},
+  {path: 'my-account', component: MyAccountComponent},
+  {path: 'my-account/profile/edit', component: MyAccountComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: '', component: HomePageComponent},

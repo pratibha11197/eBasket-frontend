@@ -40,6 +40,10 @@ export class AllItemsComponent implements OnInit {
     this.customerService.getUserByToken(token).subscribe((data: ResponseHandler) => {
       if (data.success) {
         let userId = data.result.customer_id;
+        if(this.itemQty[i] <= 0){
+          alert("Please add valid item quantity.");
+        }
+        else{
         this.productService.addProductToCart(productId, userId, this.itemQty[i]).subscribe((data) => {
           if (data) {
             alert("Product added to Cart");
@@ -50,6 +54,7 @@ export class AllItemsComponent implements OnInit {
         }
         )
       }
+    }
     }, (error: ErrorEvent) => {
       console.log(error);
     })
@@ -58,7 +63,7 @@ export class AllItemsComponent implements OnInit {
   getProductsByCategory(category: string) {
     this.selectedCategory = category;
     if (category != 'All') {
-      this.productService.getProductsByCategory(category).subscribe(
+      this.productService.getProductsByCategoryAndCriteria(category).subscribe(
         (data) => {
           if (data.success)
             this.allProducts = data.result;

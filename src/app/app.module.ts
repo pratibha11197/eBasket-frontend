@@ -22,6 +22,8 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { OrderSuccessComponent } from './components/order-success/order-success.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { MyAccountComponent } from './components/my-account/my-account.component';
+import { MyAccountSideNavComponent } from './components/my-account-side-nav/my-account-side-nav.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
     LoginComponent,
     OrderSuccessComponent,
     OrdersComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    MyAccountComponent,
+    MyAccountSideNavComponent
   ],
   imports: [
     BrowserModule,

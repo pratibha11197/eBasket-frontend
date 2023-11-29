@@ -23,12 +23,12 @@ export class ProductService {
     });
   }
 
-  public getAllProducts(searchKey?: string): Observable<ResponseHandler> {
-    return this.http.get<ResponseHandler>(this.backendUrl + "/products/all", {params: {'searchKey': searchKey != null ? searchKey : "" }});
+  public getAllProducts(searchKey?: string, criteria?: string): Observable<ResponseHandler> {
+    return this.http.get<ResponseHandler>(this.backendUrl + "/products/all", {params: {'searchKey': searchKey != null ? searchKey : "", 'criteria': criteria != null ? criteria : ""}});
   }
 
-  public getProductsByCategory(category: string,searchKey?: string): Observable<ResponseHandler> {
-    return this.http.get<ResponseHandler>(this.backendUrl + "/products", {params: {'category': category, 'searchKey': searchKey != null ? searchKey : "" }});
+  public getProductsByCategoryAndCriteria(category: string,searchKey?: string, criteria?: string): Observable<ResponseHandler> {
+    return this.http.get<ResponseHandler>(this.backendUrl + "/products", {params: {'category': category, 'searchKey': searchKey != null ? searchKey : "" , 'criteria': criteria != null ? criteria : ""}});
   }
 
 }
