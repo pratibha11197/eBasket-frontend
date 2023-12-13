@@ -13,6 +13,8 @@ import { OrderSuccessComponent } from './components/order-success/order-success.
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { MyAccountComponent } from './components/my-account/my-account.component';
+import { EditAccountComponent } from './components/edit-account/edit-account.component';
+import { EditDeliveryAddComponent } from './components/edit-delivery-add/edit-delivery-add.component';
 
 const routes: Routes = [
   {path:'product/:id', component: ProductDetailsComponent},
@@ -24,7 +26,8 @@ const routes: Routes = [
   {path: 'orders', component: OrdersComponent},
   {path: 'view-all', component: AllItemsComponent},
   {path: 'my-account', component: MyAccountComponent},
-  {path: 'my-account/profile/edit', component: MyAccountComponent},
+  {path: 'my-account/profile/edit', component: EditAccountComponent},
+  {path: 'my-account/delivery-add/edit', component: EditDeliveryAddComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: '', component: HomePageComponent},

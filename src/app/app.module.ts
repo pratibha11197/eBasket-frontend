@@ -24,6 +24,8 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { MyAccountSideNavComponent } from './components/my-account-side-nav/my-account-side-nav.component';
+import { EditAccountComponent } from './components/edit-account/edit-account.component';
+import { EditDeliveryAddComponent } from './components/edit-delivery-add/edit-delivery-add.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { MyAccountSideNavComponent } from './components/my-account-side-nav/my-a
     OrdersComponent,
     OrderDetailsComponent,
     MyAccountComponent,
-    MyAccountSideNavComponent
+    MyAccountSideNavComponent,
+    EditAccountComponent,
+    EditDeliveryAddComponent
   ],
   imports: [
     BrowserModule,

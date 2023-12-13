@@ -1,0 +1,49 @@
+<div class="container" style="margin-top: 2rem;">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-3 cart-details">
+            <app-my-account-side-nav></app-my-account-side-nav>
+        </div>
+        <div class="col col-lg-9cart-details">
+            <div class="card-group row">
+                <div class="col">
+                    <div class="container" style="margin-top: 2rem;">
+                        <div class="row justify-content-md-center">
+                            <form
+                                style="width: 65%; border: .25px solid #b3b3b36c; border-top: 0px; padding: 5rem; padding-bottom: 2rem; box-shadow: 0px .2px .2px 2px #dcdcdc; background-color:rgb(241, 241, 241); color: rgb(0, 0, 0); border-radius : .5rem; border-top-right-radius: 0px; border-top-left-radius: 0px ;"
+                                [formGroup]="accountForm" (ngSubmit)="save(accountForm.value)">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" placeholder="Name"
+                                            formControlName="user_name">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputemail" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" placeholder="Email"
+                                            formControlName="email">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPhoneNo" class="col-sm-2 col-form-label">Phone No</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" placeholder="Phone no"
+                                            formControlName="phone_no">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div style="text-align: center; padding-top: 1rem;">
+                                        <button type="submit" class="btn btn-primary"
+                                            style="width: 18rem; height: 3.2rem; color: rgb(218, 213, 213); background-color:  #af0303; font-size: 1.35rem; font-weight: 600; border: 0px;"
+                                            [disabled]="accountForm.untouched || accountForm.invalid">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
