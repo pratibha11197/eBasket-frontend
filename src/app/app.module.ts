@@ -26,6 +26,8 @@ import { MyAccountComponent } from './components/my-account/my-account.component
 import { MyAccountSideNavComponent } from './components/my-account-side-nav/my-account-side-nav.component';
 import { EditAccountComponent } from './components/edit-account/edit-account.component';
 import { EditDeliveryAddComponent } from './components/edit-delivery-add/edit-delivery-add.component';
+import { DeliveryAddressComponent } from './components/delivery-address/delivery-address.component';
+import { AddDeliveryAddComponent } from './components/add-delivery-add/add-delivery-add.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { EditDeliveryAddComponent } from './components/edit-delivery-add/edit-de
     MyAccountComponent,
     MyAccountSideNavComponent,
     EditAccountComponent,
-    EditDeliveryAddComponent
+    EditDeliveryAddComponent,
+    DeliveryAddressComponent,
+    AddDeliveryAddComponent
   ],
   imports: [
     BrowserModule,

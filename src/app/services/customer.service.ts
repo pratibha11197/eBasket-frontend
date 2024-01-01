@@ -22,7 +22,6 @@ export class CustomerService {
       createCustomerData.customer_id = customer.customer_id;
       createCustomerData.email = customer.email;
       createCustomerData.phone_no = customer.phone_no;
-      createCustomerData.address = customer.address;
       createCustomerData.password = customer.password;
 
       console.log(createCustomerData);

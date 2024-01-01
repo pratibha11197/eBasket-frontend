@@ -5,7 +5,6 @@ export class Customer{
     customer_name!: string;
     email!: string;
     password!: string;
-	address!: string;
     phone_no!: number;
 	cart!: Cart;
 }

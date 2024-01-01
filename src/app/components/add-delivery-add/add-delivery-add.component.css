@@ -1,0 +1,75 @@
+p{
+    padding: 0%;
+    margin-bottom: 2%;
+    font-size: .86rem;
+    color: rgb(83, 83, 83);
+}
+
+input
+{
+ border: none;
+ border-bottom: 1px solid rgba(94, 148, 0, 0.783);
+ width: 85%;
+}
+
+.ip{
+    margin-top: .75rem;
+}
+
+label{
+    font-size: 1rem;
+}
+
+.radio{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+}
+
+.radio-div label {
+    padding: 5px;
+    border: 1px solid #CCC;
+    cursor: pointer;
+    z-index: 90;
+  }
+
+  .radio-div input[type="radio"] {
+    opacity: 0.01;
+    z-index: 100;
+  }
+
+
+  .radio-div input[type="radio"]:checked+label,
+.Checked+label {
+  background: #9cc63d;
+}
+
+
+.radio-div label {
+  border: 1px solid gray;
+  cursor: pointer;
+  z-index: 90;
+  border-radius: .25rem;
+  padding: .25rem;
+  width: 5rem;
+  text-align: center;
+}
+
+.radio-div label:hover {
+  background: #DDD;
+}
+
+button{
+    width: 15rem;
+    height: 3rem;
+    border-radius: .5rem;
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 1px solid gray;
+    margin-left: 2rem;
+}

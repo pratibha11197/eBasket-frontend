@@ -24,7 +24,6 @@ export class RegisterComponent implements OnInit{
       customer_name: new FormControl(null, Validators.required),
       email: new FormControl(null, [Validators.email, Validators.required]),
       password: new FormControl(null, [Validators.required, Validators.minLength(4), Validators.maxLength(10)]),
-      address: new FormControl(null, Validators.required),
       phone_no: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10)])
     })
   }

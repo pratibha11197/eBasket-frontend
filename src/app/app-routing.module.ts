@@ -15,6 +15,8 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { EditAccountComponent } from './components/edit-account/edit-account.component';
 import { EditDeliveryAddComponent } from './components/edit-delivery-add/edit-delivery-add.component';
+import { DeliveryAddressComponent } from './components/delivery-address/delivery-address.component';
+import { AddDeliveryAddComponent } from './components/add-delivery-add/add-delivery-add.component';
 
 const routes: Routes = [
   {path:'product/:id', component: ProductDetailsComponent},
@@ -26,8 +28,10 @@ const routes: Routes = [
   {path: 'orders', component: OrdersComponent},
   {path: 'view-all', component: AllItemsComponent},
   {path: 'my-account', component: MyAccountComponent},
+  {path: 'add-delivery-address', component: AddDeliveryAddComponent},
   {path: 'my-account/profile/edit', component: EditAccountComponent},
-  {path: 'my-account/delivery-add/edit', component: EditDeliveryAddComponent},
+  {path: 'my-account/delivery-address', component: DeliveryAddressComponent},
+  {path: 'my-account/delivery-add/edit/:id', component: EditDeliveryAddComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: '', component: HomePageComponent},

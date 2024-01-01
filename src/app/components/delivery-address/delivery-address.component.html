@@ -1,0 +1,35 @@
+<div class="container" style="margin-top: 2.5rem;">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-3 cart-details">
+            <app-my-account-side-nav></app-my-account-side-nav>
+        </div>
+        <div class="col col-lg-9cart-details">
+            <div class="row">
+                    <div class="col col-lg-6">
+                    <h2 style="margin-bottom: 2rem;">Delivery Address</h2>
+                    </div>
+                    <div class="col col-lg-6" style="text-align: end;">
+                    <button class="btn btn-primary" style="font-size: larger; border: 2px solid rgb(94, 148, 0) ; background-color: rgba(94, 148, 0, 0.144); color: black; border-radius: .5rem;" routerLink="/add-delivery-address"> +Add Address</button>
+             </div>
+            </div>
+            <div class="card-group row" style="margin-top: 2rem;">
+                    <div style="margin-left: 1rem;">
+                        <div class="card card-block col-lg-5" *ngFor="let address of addresses" style="border: 2px solid rgba(191, 191, 191, 0.667); padding: 1rem;"> 
+                            <span style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.2rem;"><span *ngIf="address.default_add" style="color: rgb(94, 148, 0);">Default Address: </span> {{address.add_type}}</span>
+                            <p style="font-size: 1.2rem; font-weight: 550; margin-bottom: 1.2rem;">{{address.receiver_name}}</p>
+                                <p> {{ address.house_no}} , {{address.apartment_name }} , {{address.street }}  , {{address.city }} - {{ address.pin }}</p>
+                                <p> ph: {{ address.phone_no }}</p>
+                                <div class="btn-group row" style="margin-top: 2rem;">
+                                    <div class="col col-lg-12" style="align-content: space-between;width: 100%;">
+                                        <button class="col-lg-6 btn btn-secondary" style="background-color: rgb(244, 244, 244); color: black; font-weight: 500; height: 3rem; font-size: 1.5;">Deliver Here</button>
+                                        <button class="col-lg-2 btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24"> <g> <path fill="none" d="M0 0h24v24H0z"/> <path d="M7 4V2h10v2h5v2h-2v15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6H2V4h5zM6 6v14h12V6H6zm3 3h2v8H9V9zm4 0h2v8h-2V9z"/> </g> </svg></button>
+                                        <button class=" col-lg-2 btn"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"/></svg></button>
+                                    </div>
+                                 </div>    
+                        </div>
+                             
+                </div>
+            </div>
+        </div>
+    </div>
+</div>                
